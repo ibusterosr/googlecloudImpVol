@@ -1,3 +1,3 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['functions', 'deploy', 'flugarsuma', '--region', 'europe-west1', '--runtime', 'python310', '--source', '.', '--entry-point', 'storage_event', '--trigger-resource', 'gs://storagesuma12', '--trigger-event', 'google.storage.object.finalize', '--trigger-event', 'google.storage.object.create', '--allow-unauthenticated']
+  args: ['functions', 'deploy', 'flugarsuma', '--region', 'europe-west1', '--runtime', 'python310', '--source', '.', '--entry-point', 'storage_event', '--trigger-resource', 'projects/proj1miax/buckets/storagesuma12', '--trigger-event', 'google.storage.object.finalize', '--trigger-event', 'google.storage.object.create', '--allow-unauthenticated']
