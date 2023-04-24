@@ -4,9 +4,8 @@ from google.cloud import storage
 import datetime
 import os
 
-def suma(request):
-    a = 1
-    b = 2
+def suma(a,b):
+
     resultado = a+b
     return resultado
 
