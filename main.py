@@ -4,8 +4,9 @@ from google.cloud import storage
 import datetime
 import os
 
-def suma(a,b):
-
+def suma(request):
+    a = 1
+    b = 2
     resultado = a+b
     return resultado
 
@@ -29,7 +30,7 @@ def create_dict(request):
     bucket_name = 'storagesuma12'
     storage_client = storage.Client()
     bucket = storage_client.bucket(bucket_name)
-    blob = bucket.blob(f'final/{filename}')
+    blob = bucket.blob(filename)
     dicc_str = json.dumps(dicc)
     blob.upload_from_string(dicc_str)
 
