@@ -34,5 +34,5 @@ def create_dict(request):
     blob.upload_from_string(dicc_str)
 
 
-    # Return a message indicating success
+    # Devolvemos el diccionario
     return dicc_str
