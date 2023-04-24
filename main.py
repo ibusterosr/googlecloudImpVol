@@ -29,6 +29,7 @@ def create_dict(request):
     bucket_name = 'storagesuma12'
     storage_client = storage.Client()
     bucket = storage_client.bucket(bucket_name)
+    #blob = bucket.blob(f'final/{filename}')
     blob = bucket.blob(filename)
     dicc_str = json.dumps(dicc)
     blob.upload_from_string(dicc_str)
@@ -36,3 +37,10 @@ def create_dict(request):
 
     # Devolvemos el diccionario
     return dicc_str
+
+
+def storage_event(event, context):
+    bucket_name = event['bucket']
+    file_name = event['name']
+    print(f"Se ha subido el archivo {file_name} al bucket {bucket_name}.")
+    return 'OK'
